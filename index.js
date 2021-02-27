@@ -15,8 +15,8 @@ app.get('/', (req, res) => {
 
 app.post('/create', (req, res) => {
 	console.log('create route!')
-	console.log('req.bodylocation = ', req.body.location)
-	console.log('req.body.photos = ', req.body.photos)
+	console.log('req.bodylocation = ', Object.keys(req.body.location))
+	console.log('req.body.photos = ', Object.keys(req.body.photos))
 
 	res.json({"success": true})
 })
