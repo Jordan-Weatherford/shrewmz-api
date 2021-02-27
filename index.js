@@ -13,8 +13,12 @@ app.get('/', (req, res) => {
 	res.send('Hello World!')
 })
 
-https.createServer({
-	key: fs.readFileSync('./key.pem'),
-    cert: fs.readFileSync('./cert.pem'),
-    passphrase: 'internet'
-}, app).listen(port)
+// https.createServer({
+// 	key: fs.readFileSync('./key.pem'),
+//     cert: fs.readFileSync('./cert.pem'),
+//     passphrase: 'internet'
+// }, app).listen(port)
+
+app.listen(port, () => {
+	console.log("I hear you and I see you. I'm listening.")
+})
