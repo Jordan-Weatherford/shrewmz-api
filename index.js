@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 // const fs = require('fs')
 
 app.use(cors())
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
 
 
 app.get('/', (req, res) => {
@@ -18,6 +18,7 @@ app.get('/', (req, res) => {
 app.post('/create', (req, res) => {
 	console.log('create route!')
 	console.log('req.body = ', req.body)
+	res.send("im listening")
 })
 
 // https.createServer({
