@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 
 app.post('/create', (req, res) => {
 	console.log('create route!')
-	console.log(req)
+	console.log('req.body = ', req.body)
 })
 
 // https.createServer({
