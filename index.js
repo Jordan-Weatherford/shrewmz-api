@@ -3,8 +3,6 @@ const cors = require('cors')
 const app = express()
 const port = process.env.PORT || 3001
 const bodyParser = require('body-parser')
-// const https = require('https')
-// const fs = require('fs')
 
 app.use(cors())
 app.use(bodyParser.json())
@@ -17,15 +15,12 @@ app.get('/', (req, res) => {
 
 app.post('/create', (req, res) => {
 	console.log('create route!')
-	console.log('req.body = ', req.body)
-	res.send("im listening")
+	console.log('req.bodylocation = ', req.body.location)
+	console.log('req.body.photos = ', req.body.photos)
+
+	res.json({"success": true})
 })
 
-// https.createServer({
-// 	key: fs.readFileSync('./key.pem'),
-//     cert: fs.readFileSync('./cert.pem'),
-//     passphrase: 'internet'
-// }, app).listen(port)
 
 app.listen(port, () => {
 	console.log("Server fired up on port: ", port)
